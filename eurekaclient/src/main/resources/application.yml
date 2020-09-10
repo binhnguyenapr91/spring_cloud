@@ -1,0 +1,22 @@
+server:
+  port: 8183
+
+spring:
+  application:
+    name: eurekaclient
+  jpa:
+    hibernate:
+      ddl-auto: update
+  datasource:
+    url: jdbc:mysql://localhost/test_db
+    password: sysadmin1234$
+    username: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8661/eureka
+  instance:
+    hostname: localhost

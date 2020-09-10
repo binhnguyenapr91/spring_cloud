@@ -1,0 +1,15 @@
+server:
+  port: 8182
+
+spring:
+  application:
+    name: feignclient
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8661/eureka
+  instance:
+    hostname: localhost
