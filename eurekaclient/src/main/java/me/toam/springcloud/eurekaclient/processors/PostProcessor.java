@@ -10,6 +10,7 @@ import me.toam.springcloud.eurekaclient.models.PostModel;
 import me.toam.springcloud.eurekaclient.services.PostService;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Component
 public class PostProcessor extends CommonProcessor<PostService, PostTransformer> {
@@ -56,5 +57,12 @@ public class PostProcessor extends CommonProcessor<PostService, PostTransformer>
         List<PostModel> postModels = null;
         postModels = transformer.toModels(posts);
         return postModels;
+    }
+
+    public List<PostModel> getPosts() {
+        List<PostModel> results = service.getAllPost()
+                .stream().map(transformer::toModel)
+                .collect(Collectors.toList());
+        return results;
     }
 }

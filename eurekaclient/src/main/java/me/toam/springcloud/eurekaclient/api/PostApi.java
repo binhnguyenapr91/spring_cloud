@@ -36,6 +36,11 @@ public class PostApi {
         return postProcessor.getPostByContent(content);
     }
 
+    @GetMapping("all")
+    public List<PostModel> getAllPosts(){
+        return postProcessor.getPosts();
+    }
+
     @PutMapping("{id}")
     public PostModel updatePost(@PathVariable Long id, @RequestBody UpdatePostModel updatePostModel) throws NotFoundEntityException {
         return postProcessor.updatePost(id, updatePostModel);

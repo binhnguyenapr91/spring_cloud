@@ -10,4 +10,7 @@ import java.util.List;
 public interface PostRepository extends CommonRepository<Post, Long> {
     @Query("SELECT a FROM Post a WHERE a.content = :content")
     public List<Post> getPostByContent(@Param("content") String content);
+
+    @Query("SELECT a FROM Post a")
+    public List<Post> getAllPost();
 }

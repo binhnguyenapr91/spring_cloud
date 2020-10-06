@@ -12,17 +12,17 @@ import me.toam.springcloud.eurekaclient.transformers.PostTransformer;
 public class PostApiTestConfiguration {
     @Bean
     @Autowired
-    public PostService accountService(PostRepository postRepository){
+    public PostService postService(PostRepository postRepository){
         return new PostService(postRepository);
     }
 
     @Bean
-    public PostTransformer accountTransformer(){
+    public PostTransformer postTransformer(){
         return new PostTransformer();
     }
 
     @Bean
-    public PostProcessor accountProcessor(PostService postService, PostTransformer postTransformer){
+    public PostProcessor postProcessor(PostService postService, PostTransformer postTransformer){
         return new PostProcessor(postService, postTransformer);
     }
 }

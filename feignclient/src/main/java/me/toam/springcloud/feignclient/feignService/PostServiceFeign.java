@@ -15,6 +15,9 @@ public interface PostServiceFeign {
     @GetMapping("api/posts/")
     List<PostModel> getPostByContent(@RequestParam String content);
 
+    @GetMapping("api/posts/all")
+    List<PostModel> getPosts();
+
     @PostMapping("api/posts/")
     PostModel createPost(@RequestBody PostModel postModel);
 

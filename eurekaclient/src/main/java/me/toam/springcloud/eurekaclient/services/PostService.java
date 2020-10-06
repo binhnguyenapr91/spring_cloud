@@ -18,4 +18,8 @@ public class PostService extends CommonService<Post,Long, PostRepository> {
     public List<Post> getPostByContent(String content){
         return repo.getPostByContent(content);
     }
+
+    public List<Post> getAllPost() {
+        return repo.getAllPost();
+    }
 }

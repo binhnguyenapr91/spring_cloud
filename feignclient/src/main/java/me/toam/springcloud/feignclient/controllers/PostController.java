@@ -24,6 +24,11 @@ public class PostController {
         return postServiceFeign.getPostByContent(content);
     }
 
+    @GetMapping("/all")
+    public List<PostModel> getAllPost(){
+        return postServiceFeign.getPosts();
+    }
+
     @DeleteMapping("/{id}")
     public PostModel deletePostById(@PathVariable Long id){
         return postServiceFeign.deletePostById(id);
