@@ -38,7 +38,7 @@ public class PostProcessor extends CommonProcessor<PostService, PostTransformer>
                $.setDescription(updatePostModel.getDescription());
            }
             if(updatePostModel.getContent()!=null){
-                $.setDescription(updatePostModel.getContent());
+                $.setContent(updatePostModel.getContent());
             }
         });
 

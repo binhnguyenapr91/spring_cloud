@@ -16,10 +16,10 @@ public interface PostServiceFeign {
     List<PostModel> getPostByContent(@RequestParam String content);
 
     @GetMapping("api/posts/all")
-    List<PostModel> getPosts();
+    List<PostModel> getAllPosts();
 
     @PostMapping("api/posts/")
-    PostModel createPost(@RequestBody PostModel postModel);
+        PostModel createPost(@RequestBody PostModel postModel);
 
     @PutMapping("api/posts/{id}")
     PostModel updatePost(@PathVariable Long id, @RequestBody UpdatePostModel updatePostModel);

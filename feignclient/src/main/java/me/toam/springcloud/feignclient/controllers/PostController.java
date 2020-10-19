@@ -25,8 +25,8 @@ public class PostController {
     }
 
     @GetMapping("/all")
-    public List<PostModel> getAllPost(){
-        return postServiceFeign.getPosts();
+    public List<PostModel> getAllPosts(){
+        return postServiceFeign.getAllPosts();
     }
 
     @DeleteMapping("/{id}")
